@@ -79,11 +79,8 @@ window.onscroll = () => {
 
         return document.getElementById("age").innerHTML = current_age;
 
-        // return Math.abs(age_dt.getUTCFullYear() - 1970);
     }
 
      calculate_age(new Date(2002, 2, 15));
 
-    // let age_element = document.querySelector('#age');
-    // age_element.classList.add('::after').setAttribute("content", + current_age  );
 
