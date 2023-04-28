@@ -1,0 +1,745 @@
+/* Selettori Tipo */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    scroll-behavior: smooth;
+    font-family:Roboto, sans-serif;
+}
+
+:root{
+    --bg-color: #1f242d;
+    --second-bg-color: #323946;
+    --text-color: #fff;
+    --main-color: #EBC502 ; 
+    --secondary-color: #0ef;   
+}
+
+
+html{
+    font-size: 65.2%;
+    overflow-x: hidden;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 4rem;
+}
+
+
+/* Divisore */
+
+.divider {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.divider svg {
+    position: relative;
+    width: 100%;
+    height: 85px;
+}
+
+.anim{
+    animation: pathAnim-0 4s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+  @keyframes pathAnim-0{
+    0%{
+      d: path("M 0,400 C 0,400 0,200 0,200 C 29.267561767589832,169.56872190576814 58.535123535179665,139.13744381153626 81,142 C 103.46487646482034,144.86255618846374 119.1270676268712,181.01894665962305 142,187 C 164.8729323731288,192.98105334037695 194.95660595733554,168.78676954997152 221,180 C 247.04339404266446,191.21323045002848 269.04650854378673,237.83397514049096 293,228 C 316.95349145621327,218.16602485950904 342.8573598675176,151.87732988806465 369,160 C 395.1426401324824,168.12267011193535 421.524051986143,250.65670530725038 439,256 C 456.475948013857,261.3432946927496 465.0464321879109,189.4958488829339 491,174 C 516.9535678120891,158.5041511170661 560.2902192622133,199.35989916101397 588,227 C 615.7097807377867,254.64010083898603 627.7926907632354,269.06455447301016 645,253 C 662.2073092367646,236.93544552698987 684.539017684845,190.38188294694544 712,165 C 739.460982315155,139.61811705305456 772.0512384973847,135.40791373920803 796,148 C 819.9487615026153,160.59208626079197 835.2560283256161,189.98646209622254 859,199 C 882.7439716743839,208.01353790377746 914.9246482001514,196.6462378759019 937,184 C 959.0753517998486,171.3537621240981 971.0453788737791,157.42858640016988 997,166 C 1022.9546211262209,174.57141359983012 1062.8938363047314,205.6394165234186 1091,216 C 1119.1061636952686,226.3605834765814 1135.3792759072956,216.0137475061558 1159,195 C 1182.6207240927044,173.9862524938442 1213.5890600660857,142.30559345195823 1234,131 C 1254.4109399339143,119.69440654804177 1264.2644838283613,128.76387868601125 1286,156 C 1307.7355161716387,183.23612131398875 1341.3530046204683,228.63889180399676 1369,239 C 1396.6469953795317,249.36110819600324 1418.3234976897659,224.6805540980016 1440,200 C 1440,200 1440,400 1440,400 Z");
+    }
+    25%{
+      d: path("M 0,400 C 0,400 0,200 0,200 C 30.407859768071084,208.61701341242673 60.81571953614217,217.2340268248535 83,207 C 105.18428046385783,196.7659731751465 119.14498162350245,167.68090611301284 142,152 C 164.85501837649755,136.31909388698716 196.604353969848,134.04234872309516 221,162 C 245.395646030152,189.95765127690484 262.43760249710556,248.14969899460652 282,255 C 301.56239750289444,261.8503010053935 323.64523604172996,217.3588552984789 348,185 C 372.35476395827004,152.6411447015211 398.9814533359745,132.41487981147793 428,158 C 457.0185466640255,183.58512018852207 488.4289506143724,254.98162545560945 515,274 C 541.5710493856276,293.01837454439055 563.3027442065357,259.6586183660842 584,234 C 604.6972557934643,208.34138163391577 624.3600725594845,190.38390108005365 646,184 C 667.6399274405155,177.61609891994635 691.2569655555261,182.80577731370113 716,195 C 740.7430344444739,207.19422268629887 766.6120652184107,226.39298966514187 792,221 C 817.3879347815893,215.60701033485813 842.2947735708308,185.62226402573157 865,196 C 887.7052264291692,206.37773597426843 908.2088404982661,257.1179542319319 930,258 C 951.7911595017339,258.8820457680681 974.8698644361051,209.90591904654102 998,181 C 1021.1301355638949,152.09408095345898 1044.311701757313,143.25836958190388 1068,156 C 1091.688298242687,168.74163041809612 1115.8833285346425,203.06060262584342 1140,227 C 1164.1166714653575,250.93939737415658 1188.1549841041165,264.4992199147224 1215,248 C 1241.8450158958835,231.5007800852776 1271.4967350488917,184.94251771526706 1297,163 C 1322.5032649511083,141.05748228473294 1343.8580757003167,143.73070922420942 1367,154 C 1390.1419242996833,164.26929077579058 1415.0709621498418,182.1346453878953 1440,200 C 1440,200 1440,400 1440,400 Z");
+    }
+    50%{
+      d: path("M 0,400 C 0,400 0,200 0,200 C 22.851232301235946,171.36975820087852 45.70246460247189,142.73951640175704 70,160 C 94.29753539752811,177.26048359824296 120.0413738913484,240.41169259385043 148,238 C 175.9586261086516,235.58830740614957 206.1320398321345,167.61371322284114 228,166 C 249.8679601678655,164.38628677715886 263.4304667801137,229.13345451478492 288,221 C 312.5695332198863,212.86654548521508 348.1460930474108,131.85246871801928 370,132 C 391.8539069525892,132.14753128198072 399.98516103024315,213.45667061313793 420,233 C 440.01483896975685,252.54332938686207 471.9132628316164,210.3208488294289 501,192 C 530.0867371683836,173.6791511705711 556.3617876432914,179.25993406914648 580,179 C 603.6382123567086,178.74006593085352 624.6395865952175,172.63941489398513 651,179 C 677.3604134047825,185.36058510601487 709.0798659758386,204.18240635491287 731,190 C 752.9201340241614,175.81759364508713 765.040949501428,128.63095968636327 789,144 C 812.959050498572,159.36904031363673 848.7563360184495,237.29375489963405 876,241 C 903.2436639815505,244.70624510036595 921.9337064247743,174.19402071510046 940,160 C 958.0662935752257,145.80597928489954 975.5088382824533,187.93016223996412 1003,206 C 1030.4911617175467,224.06983776003588 1068.0309404454124,218.08533032504292 1091,210 C 1113.9690595545876,201.91466967495708 1122.3673999358978,191.72851645986418 1141,174 C 1159.6326000641022,156.27148354013582 1188.499459810996,131.0006038355003 1219,137 C 1249.500540189004,142.9993961644997 1281.6347608201165,180.26906819813453 1305,187 C 1328.3652391798835,193.73093180186547 1342.9614969085383,169.92312337196157 1364,167 C 1385.0385030914617,164.07687662803843 1412.5192515457309,182.03843831401923 1440,200 C 1440,200 1440,400 1440,400 Z");
+    }
+    75%{
+      d: path("M 0,400 C 0,400 0,200 0,200 C 16.217665208764387,168.63167988882768 32.435330417528775,137.26335977765535 58,161 C 83.56466958247123,184.73664022234465 118.4763435386493,263.5782407782062 148,265 C 177.5236564613507,266.4217592217938 201.65929542787399,190.42367710952 227,176 C 252.34070457212601,161.57632289048 278.88647474985487,208.72705078371385 297,229 C 315.11352525014513,249.27294921628615 324.79480557270665,242.66811975562447 348,232 C 371.20519442729335,221.33188024437553 407.93430295931853,206.60047019378828 435,199 C 462.06569704068147,191.39952980621172 479.46798259001923,190.9299994692223 500,196 C 520.5320174099808,201.0700005307777 544.1937666806043,211.6795319293226 572,231 C 599.8062333193957,250.3204680706774 631.7569506875639,278.3518728134874 658,265 C 684.2430493124361,251.64812718651262 704.7784305691401,196.9129768167279 727,185 C 749.2215694308599,173.0870231832721 773.1293270358757,203.996219919601 794,225 C 814.8706729641243,246.003780080399 832.7042612873569,257.1021435048681 856,224 C 879.2957387126431,190.8978564951319 908.0536278146965,113.59520606092653 933,125 C 957.9463721853035,136.40479393907347 979.0812274538566,236.51703225142566 1002,238 C 1024.9187725461434,239.48296774857434 1049.621462369877,142.33666493337077 1075,138 C 1100.378537630123,133.66333506662923 1126.432923066635,222.13630801509126 1153,225 C 1179.567076933365,227.86369198490874 1206.6468453635823,145.1181030062642 1231,140 C 1255.3531546364177,134.8818969937358 1276.9796954790354,207.39127995985194 1302,227 C 1327.0203045209646,246.60872004014806 1355.4343727202754,213.316777154328 1379,200 C 1402.5656272797246,186.683222845672 1421.2828136398623,193.341611422836 1440,200 C 1440,200 1440,400 1440,400 Z");
+    }
+    100%{
+      d: path("M 0,400 C 0,400 0,200 0,200 C 29.267561767589832,169.56872190576814 58.535123535179665,139.13744381153626 81,142 C 103.46487646482034,144.86255618846374 119.1270676268712,181.01894665962305 142,187 C 164.8729323731288,192.98105334037695 194.95660595733554,168.78676954997152 221,180 C 247.04339404266446,191.21323045002848 269.04650854378673,237.83397514049096 293,228 C 316.95349145621327,218.16602485950904 342.8573598675176,151.87732988806465 369,160 C 395.1426401324824,168.12267011193535 421.524051986143,250.65670530725038 439,256 C 456.475948013857,261.3432946927496 465.0464321879109,189.4958488829339 491,174 C 516.9535678120891,158.5041511170661 560.2902192622133,199.35989916101397 588,227 C 615.7097807377867,254.64010083898603 627.7926907632354,269.06455447301016 645,253 C 662.2073092367646,236.93544552698987 684.539017684845,190.38188294694544 712,165 C 739.460982315155,139.61811705305456 772.0512384973847,135.40791373920803 796,148 C 819.9487615026153,160.59208626079197 835.2560283256161,189.98646209622254 859,199 C 882.7439716743839,208.01353790377746 914.9246482001514,196.6462378759019 937,184 C 959.0753517998486,171.3537621240981 971.0453788737791,157.42858640016988 997,166 C 1022.9546211262209,174.57141359983012 1062.8938363047314,205.6394165234186 1091,216 C 1119.1061636952686,226.3605834765814 1135.3792759072956,216.0137475061558 1159,195 C 1182.6207240927044,173.9862524938442 1213.5890600660857,142.30559345195823 1234,131 C 1254.4109399339143,119.69440654804177 1264.2644838283613,128.76387868601125 1286,156 C 1307.7355161716387,183.23612131398875 1341.3530046204683,228.63889180399676 1369,239 C 1396.6469953795317,249.36110819600324 1418.3234976897659,224.6805540980016 1440,200 C 1440,200 1440,400 1440,400 Z");
+    }
+  }
+
+ .contacts .divider {
+    z-index: -1;
+    position: absolute;
+    bottom: inherit;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: scaleY(-1)
+ }
+
+/* Stile bottoni */
+
+.btn{
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--main-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem  var(--main-color);
+    font-size: 1.6rem;
+    color: var(--second-bg-color);
+    letter-spacing: .1rem;
+    font-weight: 600;
+    transition: .5s ease-out;
+}
+.btn.secondary-btn {
+    background: var(--secondary-color);
+    box-shadow: 0 0 1rem  var(--secondary-color);
+}
+
+
+
+.btn:hover{
+    transform: scale(1.05);
+}
+
+/* Colorazione testo importante in home */
+
+span{
+    color: var(--main-color);
+}
+
+.blue {
+    color: var(--secondary-color); 
+}
+
+/* Titolo importante nelle sezioni  */
+
+.heading {
+    text-align: center;
+    font-size: 4.5rem;
+    text-shadow: 2px 4px 4px var(--second-bg-color);
+}
+
+
+/* Navbar section */
+
+.header{
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background: var(--bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header.sticky {
+    border-bottom: .1rem solid rgb(255, 0, 0);
+}
+
+.logo{
+    font-size: 2.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+    cursor: default;
+}
+
+.navbar a{
+   font-size: 1.7rem;
+   color: var(--text-color);
+   margin-left: 4rem;
+   transition: .2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+
+#menu-icon{
+    font-size: 3.6rem;
+    color: var(--text-color);
+    display: none;
+}
+
+/* Home section */
+
+.home{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image: url("img/home-bg.jpg");
+    background-size: cover;
+    background-position:center;
+}
+
+.home .home-img{
+   width: 21rem;
+   height: 21rem;
+   border: 2px solid var(--main-color);
+   border-radius: 50%;
+   margin-bottom: 3rem;
+   transition: .4s ease;
+   animation: floatImage 4s ease-in-out infinite;
+}
+
+@keyframes floatImage {
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-2.4rem);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.home .home-img:hover {
+    box-shadow: 0 0 3rem var(--main-color);
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.home-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+
+
+.home-content  {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-content h3{
+    font-size: 3.2rem;
+    font-weight: 700;
+    text-align: center;
+
+}
+.home-content h3:nth-of-type(2){
+ margin-bottom: 2rem;
+ text-align: center;
+}
+
+
+
+.home-content h1{
+    font-size: 5.6rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+}
+.home-content p{
+    font-size: 1.6rem;
+    text-align: center;
+}
+
+.social-media{
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: .2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    margin: 3rem 1.5rem 3rem 0;
+    transition: .4s ease-out;
+}
+.social-media a:hover{
+    background: var(--main-color);
+    color: var(--second-bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+
+
+.home-content a.btn{
+  text-align: center;
+}
+
+
+
+/* Sezione about me */
+
+span[id=age]{
+    color: var(--text-color);
+}
+
+.about{
+    z-index: 1;
+    position: relative;
+    background-image: url(img/about-bg.jpg);
+    background-size: cover;
+    background-position-x: center;
+    background-position-y: top;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.about-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content .about-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 2rem 2rem;
+    background: #32394673;
+    border-radius: 2rem ;
+}
+
+.about-img img {
+    width: 35vw;
+    text-align: center;
+}
+
+
+
+.about-content h2 {
+    text-align: left;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: -1.5rem;
+}
+
+.about-content h3{
+    font-size: 2.6rem;
+    text-align: center;
+}
+
+.about-content p{
+    font-size: 2.4rem;
+    margin: 2rem 0 3rem;
+    text-align:justify;
+    line-height: 5rem;
+}
+
+.about-content p strong {
+    font-size: 2.7rem;
+}
+
+/* Sezione servizi */
+
+.services {
+    z-index: 1;
+    position: relative;
+    background-image: url(img/services-bg.jpg);
+    background-size: cover;
+    background-position: top;
+}
+
+.services h2 {
+    margin-bottom: 5rem;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.services-container .services-box{
+    flex: 1 1 30rem;
+    background: var(--second-bg-color);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: .2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.services-container .services-box:hover{
+    border-color: var(--main-color);
+    transform: scale(1.02);
+}
+
+.services-box i {
+    font-size: 7rem;
+    color: var(--main-color);
+    padding-bottom: .5rem;
+}
+
+.services-box h3 {
+    font-size: 2.6rem;
+}
+
+.services-box p {
+    font-size: 1.6rem;
+    margin: 1rem 0 3rem;
+}
+
+/* Sezione portfolio */
+
+.portfolio{
+    z-index: 1;
+    position: relative;
+    background: url(img/portfolio-bg.jpg);
+    background-position-x: center;
+    background-position-y: 46%;
+    background-size: cover;
+}
+
+.portfolio h2 {
+    margin-bottom: 4rem;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box {
+    position: relative;
+    border-radius: 2rem;
+    box-shadow: 0 0 1rem var(--secondary-color);
+    overflow: hidden;
+    display: flex;
+
+}
+
+.portfolio-box img {
+    width: 100%;
+    transition: .5s ease;
+}
+
+.portfolio-box:hover img {
+transform: scale(1.1);
+}
+
+
+.portfolio-box .portfolio-layer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, .1), var(--secondary-color));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 4rem;
+    transform: translateY(150%);
+    transition: .5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer{
+    transform: translateY(0);
+}
+
+.portfolio-layer h4{
+    font-size: 3rem;
+}
+
+.portfolio-layer p{
+    font-size: 1.6rem;
+    margin: .3rem 0 1rem;
+}
+
+.portfolio-layer a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    background: var(--text-color);
+    border-radius: 50%;
+}
+
+.portfolio-layer a i {
+    font-size: 2rem;
+    color: var(--second-bg-color);
+}
+
+/* Sezione contatti */
+
+.contacts{
+    z-index: 1;
+    position: relative;
+    background: url("/img/contacts-bg.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+.contacts h2{
+    margin-bottom: 3rem;
+}
+
+.contacts form{
+    max-width: 70rem;
+    margin: 1rem auto;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.contacts form .input-box{
+    display: flex;
+    justify-content:space-between;
+    flex-wrap: wrap;
+}
+
+.contacts form .input-box input,
+.contacts form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--text-color);
+    background: #323946e5;
+    border-radius: .8rem;
+    margin: .7rem 0;
+}
+
+::placeholder {
+    color: var(--text-color);
+    opacity: .4;
+}
+
+.contacts form .input-box input{
+    width: 100%;
+}
+
+.contacts form textarea{
+    resize: none;
+}
+
+.contacts form .btn{
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem 9%;
+    background: var(--second-bg-color);
+}
+
+.footer-text p{
+    font-size: 1.6rem;
+}
+
+.footer-iconTop a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: .8rem;
+    background: var(--main-color);
+    border-radius: 50%;
+    transition: .5s ease;
+}
+
+.footer-iconTop a:hover {
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i{
+    font-size: 2.8rem;
+    color: var(--second-bg-color);
+}
+
+
+/* BREAKPOINTS */
+
+@media (max-width: 1569px) {
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1200px) {
+    html{
+        font-size: 55%;
+    }
+
+    /* .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    } */
+    
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 3%;
+    }
+
+    section {
+        padding: 10rem 3% 2rem;
+    }
+
+    .services {
+        padding-bottom: 7rem;
+    }
+
+    .portfolio {
+        padding-bottom: 7rem;
+    }
+
+    .contacts {
+        min-height: auto;
+    }
+
+    .footer {
+        padding: 2rem 3%;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-icon {
+        display: block;
+    }
+
+    .navbar {
+        position: absolute;
+        top:100%;
+        left: 0;
+        width: 100%;
+        padding: 1rem 3%;
+        background: var(--bg-color);
+        border-top: .1rem solid rgba(0, 0, 0, .2);
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
+        display: none;
+    }
+
+    .navbar.active {
+        display: block;
+    }
+
+    .navbar a {
+        display: block;
+        font-size: 2rem;
+        margin: 3rem 0;
+    }
+
+    /* .home {
+        flex-direction: column;
+    } */
+
+    .home-content h3 {
+        font-size: 2.6rem;
+    }
+
+    .home-content h1 {
+        font-size: 5rem;
+    }
+
+    /* .home-img img {
+        width: 70vw;
+        margin-top: 4rem;
+    } */
+
+    /* .about {
+        flex-direction: column-reverse;
+    } */
+
+    /* .about img {
+        width: 70vw;
+        margin-top: 4rem;
+    } */
+
+    .services h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio h2 {
+        margin-bottom: 3rem;
+    }
+
+    .portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+/* @media (max-width: 617px) {
+    .portfolio-container {
+        grid-template-columns: 1fr;
+    }
+} */
+
+@media (max-width: 450px) {
+    html {
+        font-size: 50%;
+    }
+
+    /* .contacts form .input-box input {
+        width: 100%;
+    } */
+}
+
+@media (max-width: 365px) {
+    /* .home-img img {
+        width: 90vw;
+    } */
+
+    /* .about-img img {
+        width: 90vw;
+    } */
+
+    .footer {
+        flex-direction: column-reverse;
+    }
+
+    .footer p {
+        text-align: center;
+        margin-top: 2rem;
+    }
+} 
+
+@media (orientation: landscape) {
+    .contacts {
+        background-image: url("img/contacts-landscape-bg.jpg");
+    }
+}
+
