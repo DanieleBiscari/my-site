@@ -48,17 +48,17 @@ window.onscroll = () => {
 
     // Scroll reveal
 
-    ScrollReveal({
-        // reset: true,
-        distance: '80px',
-        duration: 2000,
-        delay: 200
-    });
+    // ScrollReveal({
+    //     // reset: true,
+    //     distance: '80px',
+    //     duration: 2000,
+    //     delay: 200
+    // });
 
-    ScrollReveal().reveal('.home-img img, .home-content, .heading', { origin: 'top' });
-    ScrollReveal().reveal('.home-content h1, .services-container, .portfolio-box, .contact form ', { origin: 'bottom' });
-    ScrollReveal().reveal('.about-img', { origin: 'left' });
-    ScrollReveal().reveal('.about-content', { origin: 'right' });
+    // ScrollReveal().reveal('.home-img img, .home-content, .heading', { origin: 'top' });
+    // ScrollReveal().reveal('.home-content h1, .services-container, .portfolio-box, .contact form ', { origin: 'bottom' });
+    // ScrollReveal().reveal('.about-img', { origin: 'left' });
+    // ScrollReveal().reveal('.about-content', { origin: 'right' });
 
     // Typed js
 
