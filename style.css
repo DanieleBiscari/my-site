@@ -1,6 +1,10 @@
 
 /* Selettori Tipo */
 
+*::before, *::after {
+    box-sizing: border-box;
+}
+
 *{
     margin:0;
     padding:0;
@@ -496,7 +500,7 @@ transform: scale(1.1);
 .contacts{
     z-index: 1;
     position: relative;
-    background: url("/img/contacts-bg.jpg");
+    background: url(img/contacts-bg.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -583,12 +587,22 @@ transform: scale(1.1);
 /* BREAKPOINTS */
 
 @media (max-width: 1569px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 1200px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+    
     html{
         font-size: 55%;
     }
@@ -596,6 +610,11 @@ transform: scale(1.1);
 }
 
 @media (max-width: 991px) {
+
+    html, body {
+        overflow-x: hidden;
+    }
+
     .header {
         padding: 2rem 3%;
     }
@@ -622,6 +641,10 @@ transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
     #menu-icon {
         display: block;
     }
@@ -675,6 +698,10 @@ transform: scale(1.1);
 }
 
 @media (max-width: 480px) {
+    html, body {
+        overflow-x: hidden;
+    }
+
     html {
         font-size: 50%;
     }
@@ -691,8 +718,11 @@ transform: scale(1.1);
 
 
 @media (orientation: landscape) {
+    html, body {
+        overflow-x: hidden;
+    }
     .contacts {
-        background-image: url("img/contacts-landscape-bg.jpg");
+        background-image: url(img/contacts-landscape-bg.jpg);
     }
 }
 
