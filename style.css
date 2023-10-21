@@ -37,9 +37,17 @@ body{
 
 section {
     min-height: 100vh;
-    padding: 10rem 9% 4rem;
+    padding: 0 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
+a {
+    color: #fff;
+}
 
 /* Divisore */
 
@@ -188,10 +196,6 @@ span{
 .home{
     z-index: 1;
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     background-image: url("img/home-bg.jpg");
     background-size: cover;
     background-position:center;
@@ -311,11 +315,7 @@ span[id=age]{
     background-size: cover;
     background-position-x: center;
     background-position-y: top;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 2rem;
+    padding-bottom: 15rem;
 }
 
 .about-content{
@@ -366,6 +366,7 @@ span[id=age]{
     background-image: url(img/services-bg.jpg);
     background-size: cover;
     background-position: top;
+    padding-bottom: 15rem;
 }
 
 .services h2 {
@@ -381,6 +382,10 @@ span[id=age]{
 }
 
 .services-container .services-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     flex: 1 1 30rem;
     background: var(--second-bg-color);
     padding: 3rem 2rem 4rem;
@@ -419,6 +424,8 @@ span[id=age]{
     background-position-x: center;
     background-position-y: 46%;
     background-size: cover;
+    padding-top: 7rem;
+        padding-bottom: 7rem;
 }
 
 .portfolio h2 {
@@ -438,12 +445,12 @@ span[id=age]{
     box-shadow: 0 0 1rem var(--secondary-color);
     overflow: hidden;
     display: flex;
-
 }
 
 .portfolio-box img {
     width: 100%;
     transition: .5s ease;
+    object-fit: cover;
 }
 
 .portfolio-box:hover img {
@@ -620,20 +627,8 @@ transform: scale(1.1);
         padding: 2rem 3%;
     }
 
-    section {
-        padding: 10rem 3% 2rem;
-    }
-
-    .services {
-        padding-bottom: 7rem;
-    }
-
-    .portfolio {
-        padding-bottom: 7rem;
-    }
-
     .contacts {
-        min-height: auto;
+        min-height: 90vh;
     }
 
     .footer {

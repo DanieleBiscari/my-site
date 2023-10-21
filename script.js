@@ -1,8 +1,23 @@
-
-// Toggle menu ad hamburger
-
 let menuIcon = document.querySelector('#menu-icon');
 let navbar = document.querySelector('.navbar');
+let imgWantHeight = document.querySelector(".copycat-height");
+let imgToCopyHeight = document.querySelector(".want-height");
+
+
+
+// Copycat img height
+
+let computedStyle = window.getComputedStyle(imgToCopyHeight)
+let newHeight = computedStyle.getPropertyValue("height")
+imgWantHeight.style.height = newHeight
+
+window.onresize = () => {
+    computedStyle = window.getComputedStyle(imgToCopyHeight)
+    newHeight = computedStyle.getPropertyValue("height")
+    imgWantHeight.style.height = newHeight
+};
+
+// Toggle menu ad hamburger
 
 menuIcon.onclick = () => {
     menuIcon.classList.toggle('bx-x');
@@ -82,5 +97,4 @@ window.onscroll = () => {
     }
 
      calculate_age(new Date(2002, 2, 15));
-
 
