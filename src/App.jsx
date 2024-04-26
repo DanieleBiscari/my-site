@@ -6,8 +6,25 @@ import Contact from "./pages/Contact";
 import TechStack from "./pages/TechStack";
 import Layout from "./layouts/layout";
 import Layout2 from "./layouts/layout2";
+import { stagger, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
 function App() {
+  /*
+    questo delayScope deve essere inserito nella ref di un root in cui 
+    all'interno ci saranno delle classi .cascadeDelayAnim per poter 
+    targettizare quali classi devono avvere questo effet di delay a catena
+  */
+  const delayScope = useDelayAnimation(); // custom hook
+  function useDelayAnimation() {
+    const [scope, animate] = useAnimate();
+
+    useEffect(() => {
+      animate(".cascadeDelayAnim", { scale: 1, opacity: 1 }, { delay: stagger(1) });
+    });
+    return scope;
+  }
+
   return (
     // <BrowserRouter basename={process.env.PUBLIC_URL}>
     <BrowserRouter>
@@ -16,7 +33,7 @@ function App() {
           exact
           path="/"
           element={
-            <Layout bgImage={"bgHome"}>
+            <Layout bgImage={"bgHome"} delayScope={delayScope}>
               <Home />
             </Layout>
           }
@@ -51,7 +68,7 @@ function App() {
             </Layout2>
           }
         />
-        
+
         <Route
           exact
           path="/tech"

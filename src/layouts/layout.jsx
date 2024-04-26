@@ -1,14 +1,38 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import imgStar from "../assets/img/stars.png";
 import imgPerson from "../assets/img/person.png";
 import { motion } from "framer-motion";
+import { humanAnimation, spaceshipAnimation } from "../animations/variants";
 
-const layout = ({ children, bgImage }) => {
+const layout = ({ children, bgImage, delayScope }) => {
   const [mousePosition, setMousePosition] = useState({
     x: undefined,
     y: undefined,
   });
   const [starMovment, setStarMovment] = useState({ x: 0, y: 0 });
+  
+  //-> Framer Motion Animation
+  const starAnimation = {
+    hidden: { opacity: 1, scale: .8 },
+    show: {
+      scale: 1,
+      x: starMovment.x,
+      y: starMovment.y,
+      opacity: [1, 0.5, 1],
+      transition: {
+        opacity: {
+          duration: 1,
+          repeat: Infinity,
+        },
+        scale: {
+          duration: .5,
+          ease: "easeOut"
+        },
+      },
+    },
+  };
+  //<-
+
   function handleMouseMove(e) {
     const movmentPower = 5;
     let movmentX;
@@ -32,37 +56,35 @@ const layout = ({ children, bgImage }) => {
     setMousePosition(newMousePosition);
   }
 
-  const starAnimation = {
-    hidden: { opacity: 1, scale: 0.8 },
-    show: {
-      scale: 1,
-      x: starMovment.x,
-      y: starMovment.y,
-      opacity: [1, 0.5, 1],
-      transition: {
-        opacity: {
-          duration: 1,
-          repeat: Infinity,
-        },
-      },
-    },
-  };
-
   return (
     <>
       <div>Navbar</div>
       <motion.div
+        ref={delayScope}
         onMouseMove={(e) => handleMouseMove(e)}
         aria-label="Applicazione"
         className={`${bgImage} flex justify-center lg:h-screen bg-no-repeat bg-cover relative overflow-hidden`}
         role="application"
       >
-        <img
-          src={imgPerson}
-          alt="person"
-          className="absolute z-50 left-[55vw] bottom-[0rem] w-[30rem] pointer-events-none scale-x-[-1]"
-        />
-        <div className="insideBg absolute w-full h-full bg-white/20 z-40 pointer-events-none"></div>
+        <motion.div
+          className="w-full h-full"
+          initial="hidden"
+          animate="show"
+        >
+          <div className="person absolute z-50 left-[55vw] bottom-[0rem] w-[30rem] pointer-events-none">
+            <motion.img
+              className="cascadeDelayAnim"
+              src={imgPerson}
+              alt="person"
+              variants={humanAnimation}
+            />
+          </div>
+          <motion.div
+            className="cascadeDelayAnim insideBg absolute w-full h-full bg-white/20 z-40 pointer-events-none"
+            variants={spaceshipAnimation}
+          ></motion.div>
+        </motion.div>
+
         <motion.img
           variants={starAnimation}
           initial="hidden"

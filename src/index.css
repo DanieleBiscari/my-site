@@ -2,46 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer components{
-    .planet{
-        @apply block lg:absolute cursor-pointer
-    }
+@layer components {
+  .planet {
+    @apply block lg:absolute cursor-pointer;
+  }
 
-    .figureLayer{
-        @apply z-0
-    }
+  .figureLayer {
+    @apply z-0;
+  }
 
-    .textLayer{
-        @apply z-10
-    }
+  .textLayer {
+    @apply z-10;
+  }
 }
 
-body{
-    font-family: "Bitter", serif;
-    overflow-x: hidden;
+body {
+  font-family: "Bitter", serif;
+  overflow-x: hidden;
 }
 
-h1{
-    font-size: clamp(2rem, 3vw, 3rem);
+h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
 }
 
 @media screen and (min-width: 1280px) {
-    .insideBg{
-        background-image: url("/src/assets/img/astronave.png");
-        background-size: 115rem;
-        background-blend-mode: darken;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
+  .insideBg {
+    background-image: url("/src/assets/img/astronave.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
-
-
-
-.biggerThanH1{
-    font-size: clamp(3rem, 5vw, 5rem);
 }
 
-.bgHome{
-    background-color:#0f151c;
+.person{
+    transform: scaleX(-1);
 }
 
+.biggerThanH1 {
+  font-size: clamp(3rem, 5vw, 5rem);
+}
+
+.bgHome {
+  background-color: #0f151c;
+}
