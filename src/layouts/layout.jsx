@@ -1,19 +1,27 @@
 import React, { useEffect, useState } from "react";
 import imgStar from "../assets/img/stars.png";
 import imgPerson from "../assets/img/person.png";
-import { motion } from "framer-motion";
+import { animate, motion, stagger, useAnimate } from "framer-motion";
 import { humanAnimation, spaceshipAnimation } from "../animations/variants";
 
-const layout = ({ children, bgImage, delayScope }) => {
+const layout = ({ children, bgImage }) => {
   const [mousePosition, setMousePosition] = useState({
     x: undefined,
     y: undefined,
   });
   const [starMovment, setStarMovment] = useState({ x: 0, y: 0 });
-  
+
+  useEffect(() => {
+    animate(
+      ".cascadeDelayAnim",
+      { scale: 1, opacity: 1 },
+      { delay: stagger(1) }
+    );
+  });
+
   //-> Framer Motion Animation
   const starAnimation = {
-    hidden: { opacity: 1, scale: .8 },
+    hidden: { opacity: 1, scale: 0.8 },
     show: {
       scale: 1,
       x: starMovment.x,
@@ -25,8 +33,8 @@ const layout = ({ children, bgImage, delayScope }) => {
           repeat: Infinity,
         },
         scale: {
-          duration: .5,
-          ease: "easeOut"
+          duration: 0.5,
+          ease: "easeOut",
         },
       },
     },
@@ -60,17 +68,12 @@ const layout = ({ children, bgImage, delayScope }) => {
     <>
       <div>Navbar</div>
       <motion.div
-        ref={delayScope}
         onMouseMove={(e) => handleMouseMove(e)}
         aria-label="Applicazione"
         className={`${bgImage} flex justify-center lg:h-screen bg-no-repeat bg-cover relative overflow-hidden`}
         role="application"
       >
-        <motion.div
-          className="w-full h-full"
-          initial="hidden"
-          animate="show"
-        >
+        <motion.div className="w-full h-full" initial="hidden" animate="show">
           <div className="person absolute z-50 left-[55vw] bottom-[0rem] w-[30rem] pointer-events-none">
             <motion.img
               className="cascadeDelayAnim"

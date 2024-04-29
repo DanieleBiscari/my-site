@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const HomeCenterText = () => {
+const HomeCenterText = ({exit}) => {
   return (
-    <div className="textLayer text-slate-50 font-[700] text-center px-8 drop-shadow-xl pointer-events-none">
+    <motion.div exit={exit} className="textLayer text-slate-50 font-[700] text-center px-8 drop-shadow-xl pointer-events-none">
       <motion.h1
         initial={{ y: -400 }}
         animate={{ y: 0 }}
@@ -37,7 +37,7 @@ const HomeCenterText = () => {
       >
         e sono uno <b className="font-bold">sviluppatore fullstack</b>
       </motion.h1>
-    </div>
+    </motion.div>
   );
 };
 

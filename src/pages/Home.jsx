@@ -5,7 +5,12 @@ import imgPlanet3 from "../assets/img/planet3.png";
 import imgPlanet4 from "../assets/img/planet4.png";
 import imgDog from "../assets/img/dog.png";
 import imgBone from "../assets/img/bone.png";
-import { motion, stagger, useAnimate, useAnimationControls } from "framer-motion";
+import {
+  motion,
+  stagger,
+  useAnimate,
+  useAnimationControls,
+} from "framer-motion";
 import {
   alienPlanetAnimation,
   heartAnimation,
@@ -28,8 +33,9 @@ const Home = () => {
   let newRandom;
   const timeoutRef = useRef(0);
   const [planetHover, setPlanetHover] = useState("");
+  const [planetClicked, setPlanetClicked] = useState("");
   const controls = useAnimationControls();
-  
+
   useEffect(() => {
     setInterval(() => {
       newRandom = {
@@ -47,6 +53,11 @@ const Home = () => {
     }, 30000);
   }, []);
 
+  /*
+    questo delayScope deve essere inserito nella ref di un root in cui 
+    all'interno ci saranno delle classi .cascadeDelayAnim per poter 
+    targettizare quali classi devono avvere questo effetto di delay a catena
+  */
   const delayScope = useDelayAnimation();
   function useDelayAnimation() {
     let delayCounter = 0;
@@ -58,27 +69,24 @@ const Home = () => {
         {
           delay: stagger(0.05, { startDelay: 1.5, ease: "easeOut" }),
           onComplete: () => {
-            delayCounter++
-            if(delayCounter === 6){
-              controls.start("show")
+            delayCounter++;
+            if (delayCounter === 6) {
+              controls.start("show");
             }
           },
         }
       );
-    },[]);
+    }, []);
     return scope;
   }
 
-
-
-  
   return (
-    <div
+    <motion.div
       aria-label="planets"
       className="flex gap-20 justify-center items-center flex-col lg:absolute lg:w-[90%] lg:h-[90%] lg:left-[4.5%] lg:top-[4.5%] pt-20 lg:pt-0"
       ref={delayScope}
     >
-      <div className="absolute">
+      <motion.div className="absolute" exit={{opacity: 0}}>
         <ImgRandomMovment
           src={imgDog}
           alt={"dog"}
@@ -100,11 +108,11 @@ const Home = () => {
           randomY={randomCoordinates2.y}
           duration={30}
         />
-      </div>
+      </motion.div>
 
-      <HomeCenterText />
+      <HomeCenterText  exit={{opacity: 0}}/>
 
-      <motion.div initial="hidden" animate="show" >
+      <motion.div initial="hidden" animate="show">
         <Planet
           className={
             "cascadeDelayAnim2 planet lg:top-[36%] lg:right-[80%] w-[12rem] figureLayer"
@@ -116,7 +124,9 @@ const Home = () => {
           alt={"red planet"}
           planetHover={planetHover}
           setPlanetHover={setPlanetHover}
-          planetHoverCondition={"marsHover"}
+          planetClicked={planetClicked}
+          setPlanetClicked={setPlanetClicked}
+          planet={"mars"}
           pText={"Scopri i miei progetti"}
           linkTo={"/projects"}
           variants={marsAnimation}
@@ -134,7 +144,9 @@ const Home = () => {
           alt={"heart planet"}
           planetHover={planetHover}
           setPlanetHover={setPlanetHover}
-          planetHoverCondition={"heartHover"}
+          planetClicked={planetClicked}
+          setPlanetClicked={setPlanetClicked}
+          planet={"heart"}
           pText={"Scopri la mia storia"}
           linkTo={"/about"}
           variants={heartAnimation}
@@ -152,7 +164,9 @@ const Home = () => {
           alt={"saturn planet"}
           planetHover={planetHover}
           setPlanetHover={setPlanetHover}
-          planetHoverCondition={"saturnHover"}
+          planetClicked={planetClicked}
+          setPlanetClicked={setPlanetClicked}
+          planet={"saturn"}
           pText={"Scopri le tecnologie che conosco"}
           linkTo={"/tech"}
           variants={saturnAnimation}
@@ -170,7 +184,9 @@ const Home = () => {
           alt={"alien planet"}
           planetHover={planetHover}
           setPlanetHover={setPlanetHover}
-          planetHoverCondition={"alienPlanetHover"}
+          planetClicked={planetClicked}
+          setPlanetClicked={setPlanetClicked}
+          planet={"alienPlanet"}
           pText={"Contattami"}
           linkTo={"/contact"}
           variants={alienPlanetAnimation}
@@ -178,7 +194,7 @@ const Home = () => {
           controls={controls}
         />
       </motion.div>
-    </div>
+    </motion.div>
   );
 };
 
