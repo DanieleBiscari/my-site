@@ -25,6 +25,10 @@ h1 {
   font-size: clamp(2rem, 3vw, 3rem);
 }
 
+p {
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
+}
+
 @media screen and (min-width: 1280px) {
   .insideBg {
     background-image: url("/src/assets/img/astronave.png");
@@ -44,4 +48,8 @@ h1 {
 
 .bgHome {
   background-color: #0f151c;
+}
+
+.bgAbout{
+  background-image: url("/src/assets/img/earthBG.png");
 }

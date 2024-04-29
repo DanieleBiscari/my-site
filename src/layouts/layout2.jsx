@@ -1,11 +1,13 @@
 import { motion } from "framer-motion";
 import React from "react";
 
-const layout = ({ children }) => {
+const layout = ({ children, bgImage }) => {
   return (
     <>
         <div>Navbar</div>
-        {children}
+        <div className={`${bgImage} bg-no-repeat bg-cover relative`}>
+          {children}  
+        </div>
     </>
   );
 };
