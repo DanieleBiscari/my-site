@@ -14,7 +14,7 @@ const AboutFooter = () => {
           opacity: 1,
           transition: { ease: "easeOut", type: "spring", duration: 0.5 },
         }}
-        className="leading-[2] text-balance text-center"
+        className="leading-[1.8] text-balance text-center"
       >
         Questo sito web è il mio portfolio, dove puoi trovare una selezione dei
         miei lavori e progetti. Spero che la mia passione per la programmazione
@@ -22,7 +22,7 @@ const AboutFooter = () => {
         su di me o su ciò che posso fare, non esitare a{" "}
         <Link
           to={"/contact"}
-          className="underline text-[#c0ecfd] drop-shadow-2xl"
+          className="underline text-[#dcf5ff] drop-shadow-2xl"
         >
           contattarmi
         </Link>

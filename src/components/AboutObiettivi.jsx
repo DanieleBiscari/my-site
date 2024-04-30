@@ -4,7 +4,7 @@ import React from "react";
 const AboutObiettivi = () => {
   const variants = {
     hidden: {
-      x: 1500,
+      x: "100%",
     },
   };
 
@@ -13,7 +13,7 @@ const AboutObiettivi = () => {
       <motion.div
         initial="hidden"
         animate="show"
-        className="lg:ml-8 lg:mt-8 mb-8 lg:mb-0 text-center"
+        className="lg:ml-8 lg:mt-8 mb-8 lg:mb-0"
       >
         <motion.h1
           variants={variants}

@@ -9,7 +9,6 @@ import Spinner from "../components/Spinner"
 
 const About = () => {
   const [loading, setLoading] = useState(true)
-
   useEffect(() =>{
     setTimeout(() =>{
       setLoading(false)

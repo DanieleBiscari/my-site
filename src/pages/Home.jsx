@@ -8,7 +8,6 @@ import imgBone from "../assets/img/bone.png";
 import {
   motion,
   stagger,
-  useAnimate,
   useAnimationControls,
 } from "framer-motion";
 import {
@@ -20,65 +19,37 @@ import {
 import Planet from "../components/Planet";
 import ImgRandomMovment from "../components/ImgRandomMovment";
 import HomeCenterText from "../components/HomeCenterText";
+import useRandomCoordinates from "../hooks/useRandomCoordinates";
+import useDelayAnimation from "../hooks/useDelayAnimation";
 
 const Home = () => {
-  const [randomCoordinates, setRandomCoordinates] = useState({
-    x: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-    y: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-  });
-  const [randomCoordinates2, setRandomCoordinates2] = useState({
-    x: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-    y: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-  });
-  let newRandom;
-  const timeoutRef = useRef(0);
+  const randomCoordinates = useRandomCoordinates(-300, 300, 20000);
+  const randomCoordinates2 = useRandomCoordinates(-300, 300, 30000);
+  const controls = useAnimationControls();
   const [planetHover, setPlanetHover] = useState("");
   const [planetClicked, setPlanetClicked] = useState("");
-  const controls = useAnimationControls();
-
-  useEffect(() => {
-    setInterval(() => {
-      newRandom = {
-        x: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-        y: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-      };
-      setRandomCoordinates(newRandom);
-    }, 20000);
-    setInterval(() => {
-      newRandom = {
-        x: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-        y: Math.floor(Math.random() * (300 - -300 + 1)) + -300,
-      };
-      setRandomCoordinates2(newRandom);
-    }, 30000);
-  }, []);
+  const timeoutRef = useRef(0);
+  let delayCounter = 0;
 
   /*
     questo delayScope deve essere inserito nella ref di un root in cui 
     all'interno ci saranno delle classi .cascadeDelayAnim per poter 
     targettizare quali classi devono avvere questo effetto di delay a catena
   */
-  const delayScope = useDelayAnimation();
-  function useDelayAnimation() {
-    let delayCounter = 0;
-    const [scope, animate] = useAnimate();
-    useEffect(() => {
-      animate(
-        ".cascadeDelayAnim2",
-        { scale: 1 },
-        {
-          delay: stagger(0.05, { startDelay: 1.5, ease: "easeOut" }),
-          onComplete: () => {
-            delayCounter++;
-            if (delayCounter === 6) {
-              controls.start("show");
-            }
-          },
+  const delayScope = useDelayAnimation(
+    ".cascadeDelayAnim2",
+    { scale: 1 },
+    {
+      delay: stagger(0.05, { startDelay: 1.5, ease: "easeOut" }),
+      onComplete: () => {
+        delayCounter++;
+        if (delayCounter === 6) {
+          controls.start("show");
         }
-      );
-    }, []);
-    return scope;
-  }
+      },
+    }
+  );
+
 
   return (
     <motion.div
@@ -86,7 +57,7 @@ const Home = () => {
       className="flex gap-20 justify-center items-center flex-col lg:absolute lg:w-[90%] lg:h-[90%] lg:left-[4.5%] lg:top-[4.5%] pt-20 lg:pt-0"
       ref={delayScope}
     >
-      <motion.div className="absolute" exit={{opacity: 0}}>
+      <motion.div className="absolute" exit={{ opacity: 0 }}>
         <ImgRandomMovment
           src={imgDog}
           alt={"dog"}
@@ -110,7 +81,7 @@ const Home = () => {
         />
       </motion.div>
 
-      <HomeCenterText  exit={{opacity: 0}}/>
+      <HomeCenterText exit={{ opacity: 0 }} />
 
       <motion.div initial="hidden" animate="show">
         <Planet
