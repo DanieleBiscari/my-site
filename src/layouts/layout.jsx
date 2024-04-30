@@ -17,7 +17,7 @@ const layout = ({ children, bgImage }) => {
       { scale: 1, opacity: 1 },
       { delay: stagger(1) }
     );
-  });
+  },[]);
 
   //-> Framer Motion Animation
   const starAnimation = {
