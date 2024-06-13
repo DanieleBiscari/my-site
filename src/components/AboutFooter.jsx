@@ -17,12 +17,11 @@ const AboutFooter = () => {
         className="leading-[1.8] text-balance text-center"
       >
         Questo sito web è il mio portfolio, dove puoi trovare una selezione dei
-        miei lavori e progetti. Spero che la mia passione per la programmazione
-        e la musica traspaia dal mio lavoro. Se sei interessato a saperne di più
+        miei lavori e progetti. Spero che la mia passione per la programmazione traspaia dal mio lavoro. <br/> Se sei interessato a saperne di più
         su di me o su ciò che posso fare, non esitare a{" "}
         <Link
           to={"/contact"}
-          className="underline text-[#dcf5ff] drop-shadow-2xl"
+          className="underline text-[#9ee3ff] drop-shadow-2xl hover:text-[#dcf5ff]"
         >
           contattarmi
         </Link>

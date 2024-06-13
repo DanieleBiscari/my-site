@@ -35,9 +35,9 @@ const AboutObiettivi = () => {
           }}
           className="leading-[1.6] lg:text-[2rem] text-balance"
         >
-          Mi reputo una persona ambiziosa che cerca sempra di dare il meglio, in
+          Mi reputo una persona ambiziosa che cerca sempra di dare il meglio in
           modo da poter raggiungere obbiettivi predisposti. <br />
-          Uno degli obiettivi più importanti è quello dello{" "}
+          Uno dei miei obiettivi più importanti è quello dello{" "}
           <b>studio continuo</b>, perché il mondo si evolve velocemente e stare
           al passo con le nuove tecnologie ti dà una marcia in più
         </motion.p>

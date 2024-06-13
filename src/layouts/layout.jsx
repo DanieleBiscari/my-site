@@ -74,7 +74,7 @@ const layout = ({ children, bgImage }) => {
         role="application"
       >
         <motion.div className="w-full h-full" initial="hidden" animate="show">
-          <div className="person absolute z-50 left-[55vw] bottom-[0rem] w-[30rem] pointer-events-none">
+          <div className="person absolute z-50 left-[55vw] bottom-[0rem] w-[20rem] pointer-events-none">
             <motion.img
               className="cascadeDelayAnim"
               src={imgPerson}

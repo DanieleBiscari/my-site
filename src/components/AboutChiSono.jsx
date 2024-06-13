@@ -43,7 +43,7 @@ const AboutChiSono = () => {
   }, []);
 
   return (
-    <div className="lg:px-20 lg:h-[80vh] relative">
+    <div className="lg:px-20 relative">
       <motion.div
         className="lg:ml-8 lg:mt-8 mb-8 lg:mb-0"
         initial="hidden"
@@ -59,21 +59,23 @@ const AboutChiSono = () => {
           initial={{ scale: 0 }}
           className="lg:pe-[30%] leading-[1.6] lg:text-[2rem] cascadeDelayAnim3"
         >
-          Sono un programmatore fullstack appassionato di{" "}
-          <b>creazione interfacce</b> con particolare attenzione su: <br />
+          Sono un programmatore fullstack a cui piace{" "}
+          <b>creare interfacce grafiche</b> con particolare attenzione su: <br />
           <em>esperienza utente</em>,<br />
           <em className="ml-8">accessibilità</em> e <br />
           <em className="ml-16">performance</em>
         </motion.p>
       </motion.div>
+
       <motion.img
         initial={{ scale: 0 }}
-        className="bg-slate-50 rounded-full mx-auto lg:absolute right-[5%] bottom-[10%] lg:w-[25vw] z-[-1] w-full max-w-[20rem] lg:max-w-full cascadeDelayAnim3"
+        className="bg-slate-50 rounded-full mx-auto lg:absolute right-[5%] top-[28%] lg:w-[25vw] z-[-1] w-full max-w-[20rem] lg:max-w-full cascadeDelayAnim3"
         src={fotoPersonale}
         alt="foto personale"
         width={400}
       />
-      <div className="lg:absolute bottom-12 left-[30%] flex flex-col items-center mt-16">
+      
+      <div className="flex flex-col items-center mt-16">
         <motion.div
           initial={{ scale: 0 }}
           className="cascadeDelayAnim4 text-2xl font-light italic uppercase"
