@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import imgStar from "../assets/img/stars.png";
 import imgPerson from "../assets/img/person.png";
-import { animate, motion, stagger, useAnimate } from "framer-motion";
+import { animate, motion, stagger } from "framer-motion";
 import { humanAnimation, spaceshipAnimation } from "../animations/variants";
+import Navbar from "../components/Navbar";
 
 const layout = ({ children, bgImage }) => {
   const [mousePosition, setMousePosition] = useState({
@@ -66,7 +67,7 @@ const layout = ({ children, bgImage }) => {
 
   return (
     <>
-      <div>Navbar</div>
+      <Navbar />
       <motion.div
         onMouseMove={(e) => handleMouseMove(e)}
         aria-label="Applicazione"
