@@ -8,7 +8,7 @@ const AboutChiSono = () => {
       ".cascadeDelayAnim3",
       { scale: 1 },
       {
-        delay: stagger(0.1, { ease: "easeOut", startDelay: 0 }),
+        delay: stagger(0.1, { ease: "easeOut", startDelay: 1.5 }),
       }
     );
 
@@ -16,7 +16,7 @@ const AboutChiSono = () => {
       ".cascadeDelayAnim4",
       { scale: 1 },
       {
-        delay: stagger(0.1, { ease: "easeOut", startDelay: 0.5 }),
+        delay: stagger(0.1, { ease: "easeOut", startDelay: 2 }),
       }
     );
 
@@ -24,7 +24,7 @@ const AboutChiSono = () => {
       ".scrollAnimation",
       { y: [0, -5, 0] },
       {
-        delay: stagger(0.1, { ease: "linear", startDelay: 1 }),
+        delay: stagger(0.1, { ease: "linear", startDelay: 2.5 }),
         repeat: Infinity,
         repeatDelay:5
       }
@@ -35,7 +35,7 @@ const AboutChiSono = () => {
       { opacity: [0.2, 0.5, 1], 
         y: [0, 20, 0]},
       {
-        delay: stagger(0.1, { ease: "linear", startDelay: 0.7 }),
+        delay: stagger(0.1, { ease: "linear", startDelay: 2.3 }),
         repeat: Infinity,
         repeatDelay:.5,
       }

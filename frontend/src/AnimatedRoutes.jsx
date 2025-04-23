@@ -1,11 +1,11 @@
 import { Route, Routes, useLocation } from "react-router-dom";
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Project from "../pages/Projects";
-import Contact from "../pages/Contact";
-import TechStack from "../pages/TechStack";
-import Layout from "../layouts/layout";
-import Layout2 from "../layouts/layout2";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Project from "./pages/Projects";
+import Contact from "./pages/Contact";
+import TechStack from "./pages/TechStack";
+import Layout from "./layouts/layout";
+import Layout2 from "./layouts/layout2";
 import { AnimatePresence } from "framer-motion";
 
 const AnimatedRoutes = () => {
