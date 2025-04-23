@@ -1,7 +1,7 @@
 import React from "react";
 
 const Spinner = () => {
-    
+
   return (
     <div className="content scale-50 md:scale-100 top-52 left-0  sm:left-[20%] md:left-[35%]">
       <div className="planet">

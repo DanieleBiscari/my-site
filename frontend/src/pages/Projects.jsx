@@ -5,7 +5,6 @@ import { motion } from "framer-motion"; // Importa il motion
 
 const Projects = () => {
   const [projects, setProjects] = useState([]);
-
   async function getRepos() {
     const res = await getGitHubRepos();
     const newProjects = res
@@ -65,11 +64,18 @@ const Projects = () => {
               key={index}
               className="bg-white bg-opacity-10 border border-gray-300/20 backdrop-blur-md rounded-2xl shadow-md hover:shadow-slate-300 transition-transform duration-300 p-6 flex flex-col hover:scale-[1.02]"
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                duration: 0.1,
-                delay: index * 0.1, // Ritardo progressivo ma ridotto
-                ease: "easeInOut", // Aggiunto un easing per una transizione più morbida
+              animate={{
+                opacity: 1,
+                y: 0,
+                transition: {
+                  duration: 0.1,
+                  delay: index * 0.1, // Ritardo progressivo ma ridotto
+                  ease: "easeInOut", // Aggiunto un easing per una transizione più morbida
+                },
+              }}
+              whileHover={{
+                scale: 1.05, // Aumenta la dimensione della card
+                transition: { duration: 0.01, ease: "easeOut" }, // Transizione dolce
               }}
             >
               <img
