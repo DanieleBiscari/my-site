@@ -4,7 +4,7 @@ const layout = ({ children, bgImage }) => {
   return (
     <>
         <Navbar />
-        <div className={`${bgImage} bg-no-repeat bg-cover relative`}>
+        <div className={`${bgImage} bg-no-repeat bg-cover relative min-h-screen`}>
           {children}  
         </div>
     </>
