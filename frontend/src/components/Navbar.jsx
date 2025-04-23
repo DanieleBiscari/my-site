@@ -1,6 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FaHome, FaInfoCircle, FaLaptop, FaProjectDiagram, FaPhoneAlt } from "react-icons/fa"; // Aggiunta delle icone
+import {
+  FaHome,
+  FaInfoCircle,
+  FaLaptop,
+  FaProjectDiagram,
+  FaPhoneAlt,
+} from "react-icons/fa"; // Aggiunta delle icone
 
 // eslint-disable-next-line react/prop-types
 const Navbar = ({ block = false }) => {
@@ -37,7 +43,13 @@ const Navbar = ({ block = false }) => {
   // Classe base per la navbar
   const navBaseClasses = `
     w-full z-50
-    ${block ? "relative bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400" : isFixed ? "fixed top-0" : "relative"}
+    ${
+      block
+        ? "relative bg-gradient-to-r from-gray-200 via-gray-300 to-gray-400"
+        : isFixed
+        ? "fixed top-0"
+        : "relative"
+    }
     ${
       block
         ? ""
@@ -94,7 +106,7 @@ const Navbar = ({ block = false }) => {
               className="text-gray-800 hover:text-blue-600 font-medium flex items-center space-x-2 transition duration-300"
             >
               <FaPhoneAlt />
-              <span>Contact</span>
+              <span>Contacts</span>
             </NavLink>
           </div>
 
@@ -114,32 +126,39 @@ const Navbar = ({ block = false }) => {
       {isOpen && (
         <div className="md:hidden px-4 pb-4 backdrop-blur-lg bg-white/60 transition-all ease-in-out duration-300">
           <Link
-            to="#"
+            to="/"
             className="text-gray-800 py-2 hover:text-blue-600 font-medium flex items-center space-x-2"
           >
             <FaHome />
             <span>Home</span>
           </Link>
           <Link
-            to="#"
+            to="/about"
             className="text-gray-800 py-2 hover:text-blue-600 font-medium flex items-center space-x-2"
           >
             <FaInfoCircle />
             <span>About</span>
           </Link>
           <Link
-            to="#"
+            to="/tech"
             className="text-gray-800 py-2 hover:text-blue-600 font-medium flex items-center space-x-2"
           >
             <FaLaptop />
-            <span>Services</span>
+            <span>Techs</span>
           </Link>
           <Link
-            to="#"
+            to="/projects"
+            className="text-gray-800 py-2 hover:text-blue-600 font-medium flex items-center space-x-2 transition duration-300"
+          >
+            <FaProjectDiagram />
+            <span>Projects</span>
+          </Link>
+          <Link
+            to="/contact"
             className="text-gray-800 py-2 hover:text-blue-600 font-medium flex items-center space-x-2"
           >
             <FaPhoneAlt />
-            <span>Contact</span>
+            <span>Contacts</span>
           </Link>
         </div>
       )}
