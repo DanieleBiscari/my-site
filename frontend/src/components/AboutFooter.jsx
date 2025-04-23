@@ -21,7 +21,7 @@ const AboutFooter = () => {
         su di me o su ciò che posso fare, non esitare a{" "}
         <Link
           to={"/contact"}
-          className="underline text-[#9ee3ff] drop-shadow-2xl hover:text-[#dcf5ff]"
+          className="underline text-[#27586b] drop-shadow-2xl hover:text-[#dcf5ff]"
         >
           contattarmi
         </Link>
