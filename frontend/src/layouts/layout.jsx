@@ -67,7 +67,7 @@ const layout = ({ children, bgImage }) => {
 
   return (
     <>
-      <Navbar />
+      <Navbar block/>
       <motion.div
         onMouseMove={(e) => handleMouseMove(e)}
         aria-label="Applicazione"
