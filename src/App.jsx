@@ -5,8 +5,7 @@ import AnimatedRoutes from "./AnimatedRoutes";
 function App() {
 
   return (
-    // <BrowserRouter basename={process.env.PUBLIC_URL}>
-    <BrowserRouter>
+    <BrowserRouter basename={'/my-site/'}>
         <AnimatedRoutes></AnimatedRoutes>
     </BrowserRouter>
   );
