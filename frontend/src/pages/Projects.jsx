@@ -62,7 +62,8 @@ const Projects = () => {
           {projects.map((project, index) => (
             <motion.div
               key={index}
-              className="bg-white bg-opacity-10 border border-gray-300/20 backdrop-blur-md rounded-2xl shadow-md hover:shadow-slate-300 transition-transform duration-300 p-6 flex flex-col hover:scale-[1.02]"
+              className="min-h-[35rem] bg-white bg-opacity-10 border border-gray-300/20 backdrop-blur-md rounded-2xl shadow-md 
+              hover:shadow-slate-300 transition-transform duration-300 p-6 flex flex-col hover:scale-[1.02]"
               initial={{ opacity: 0, y: 30 }}
               animate={{
                 opacity: 1,
