@@ -18,7 +18,7 @@ const layout = ({ children, bgImage }) => {
       { scale: 1, opacity: 1 },
       { delay: stagger(1) }
     );
-  },[]);
+  }, []);
 
   //-> Framer Motion Animation
   const starAnimation = {
@@ -67,11 +67,11 @@ const layout = ({ children, bgImage }) => {
 
   return (
     <>
-      <Navbar block/>
+      <Navbar block />
       <motion.div
         onMouseMove={(e) => handleMouseMove(e)}
         aria-label="Applicazione"
-        className={`${bgImage} flex justify-center lg:h-screen bg-no-repeat bg-cover relative overflow-hidden`}
+        className={`${bgImage} lg:flex justify-center lg:h-screen bg-no-repeat bg-cover relative overflow-hidden`}
         role="application"
       >
         <motion.div className="w-full h-full" initial="hidden" animate="show">

@@ -1,15 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import imgPlanet1 from "../assets/img/planet1.png";
 import imgPlanet2 from "../assets/img/planet2.png";
 import imgPlanet3 from "../assets/img/planet3.png";
 import imgPlanet4 from "../assets/img/planet4.png";
 import imgDog from "../assets/img/dog.png";
 import imgBone from "../assets/img/bone.png";
-import {
-  motion,
-  stagger,
-  useAnimationControls,
-} from "framer-motion";
+import { motion, stagger, useAnimationControls } from "framer-motion";
 import {
   alienPlanetAnimation,
   heartAnimation,
@@ -50,7 +46,6 @@ const Home = () => {
     }
   );
 
-
   return (
     <motion.div
       aria-label="planets"
@@ -83,7 +78,11 @@ const Home = () => {
 
       <HomeCenterText exit={{ opacity: 0 }} />
 
-      <motion.div initial="hidden" animate="show">
+      <motion.div
+        className="flex justify-center items-center flex-col lg:flex-row gap-10"
+        initial="hidden"
+        animate="show"
+      >
         <Planet
           className={
             "cascadeDelayAnim2 planet lg:top-[36%] lg:right-[80%] w-[12rem] figureLayer"
